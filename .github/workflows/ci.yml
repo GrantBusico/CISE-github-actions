@@ -30,3 +30,15 @@ jobs:
        
     - name: Build
       run: npm run build
+
+stages:
+  - lint
+
+eslint:
+  stage: lint
+  script:
+    - npm install -g enslint
+    - eslint --init
+    - eslint package.json
+    
+
